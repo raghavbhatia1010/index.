@@ -42,6 +42,7 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+      position: relative;
     }
 
     button {
@@ -66,7 +67,15 @@
     .no {
       background: #f1a7b8;
       color: #fff;
-      position: relative;
+      position: absolute;
+      right: 0;
+    }
+
+    .reply {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #4a1f2d;
+      display: none;
     }
   </style>
 </head>
@@ -87,29 +96,21 @@
       <button class="yes" onclick="yesClicked()">Yes</button>
       <button class="no" onmouseover="moveNo(this)">No</button>
     </div>
+
+    <div class="reply" id="reply">
+      💗 I’m really glad you said yes.
+    </div>
   </div>
 
   <script>
     function yesClicked() {
-      document.body.innerHTML = `
-        <div style="
-          height:100vh;
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          background:#f6e8dc;
-          font-family:Georgia, serif;
-          text-align:center;">
-          <h1 style="color:#c94a6a;">
-            You just made me really happy 💗
-          </h1>
-        </div>
-      `;
+      document.getElementById("reply").style.display = "block";
     }
 
     function moveNo(btn) {
-      btn.style.top = Math.random() * 60 - 30 + "px";
-      btn.style.left = Math.random() * 60 - 30 + "px";
+      const x = Math.random() * 160 - 80;
+      const y = Math.random() * 80 - 40;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
     }
   </script>
 </body>
