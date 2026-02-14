@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -98,7 +98,7 @@
     </div>
 
     <div class="reply" id="reply">
-      💗 I’m really glad you said yes.
+      💗 Happy Valentine!
     </div>
   </div>
 
